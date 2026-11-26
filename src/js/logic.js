@@ -27,13 +27,14 @@ export function spotsLabel(event) {
   if (isFull(event)) {
     return 'Cupo lleno';
   }
-  return `${spotsLeft(event)} lugares`;
+  const spots = spotsLeft(event);
+  return `${spots} ${spots === 1 ? 'lugar' : 'lugares'}`;
 }
 
 // ---------- Precio ----------
 
 export function formatPrice(price) {
-  return `$${price}`;
+  return price === 0 ? 'Gratis' : `$${price}`;
 }
 
 // ---------- Fechas ----------
